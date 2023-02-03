@@ -66,7 +66,7 @@ public class UserEndPointTest {
         user.setNome("Netenha");
         user.setSobrenome("Stompa");
         Optional<UserModel> userOptional= Optional.of(user);
-        BDDMockito.when(userRepository.findById(1l)).thenReturn(userOptional, null);
+        BDDMockito.when(userRepository.findById(1l)).thenReturn(userOptional);
         ResponseEntity<UserModel[]> response = restTemplate.getForEntity(
             "http://localhost:8080/api/all",
             UserModel[].class);
